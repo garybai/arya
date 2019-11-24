@@ -22,10 +22,15 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <spring-boot-admin.version>2.1.9</spring-boot-admin.version>
         <lombok.version>1.18.0</lombok.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <druid.version>1.1.20</druid.version>
+        <mysql-driver.version>5.1.27</mysql-driver.version>
     </properties>
 
     <modules>
+        <module>arya-common</module>
         <module>arya-ucenter</module>
+        <module>arya-eureka</module>
     </modules>
 
     <dependencyManagement>
@@ -49,8 +54,39 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql-driver.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>
