@@ -31,6 +31,7 @@
         <module>arya-common</module>
         <module>arya-ucenter</module>
         <module>arya-eureka</module>
+        <module>arya-api</module>
     </modules>
 
     <dependencyManagement>
