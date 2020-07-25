@@ -25,9 +25,13 @@ public class TestController {
 
     @GetMapping(value = "/fallback")
     public String fallback() {
-        System.out.println("bbb");
         System.out.println("aaa");
+        System.out.println("bbb");
         System.out.println("ccc");
+        System.out.println("ddd");
+        System.out.println("eee");
+        System.out.println("fff");
+        System.out.println("hhh");
         return testService.fallback();
     }
 
