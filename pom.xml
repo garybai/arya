@@ -25,6 +25,7 @@
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <druid.version>1.1.20</druid.version>
         <mysql-driver.version>5.1.27</mysql-driver.version>
+        <resilience4j-spring-boot2.version>0.14.1</resilience4j-spring-boot2.version>
     </properties>
 
     <modules>
@@ -32,6 +33,7 @@
         <module>arya-ucenter</module>
         <module>arya-eureka</module>
         <module>arya-api</module>
+        <module>arya-gateway</module>
     </modules>
 
     <dependencyManagement>
@@ -71,6 +73,11 @@
                 <scope>runtime</scope>
                 <version>${mysql-driver.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot2</artifactId>
+                <version>${resilience4j-spring-boot2.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -82,6 +89,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

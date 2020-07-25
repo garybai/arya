@@ -1,2 +1,16 @@
-{
-    }
+spring:
+  application:
+    name: arya-eureka
+  profiles:
+    active: dev
+server:
+  port: 8761
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
