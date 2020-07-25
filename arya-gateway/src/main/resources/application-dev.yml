@@ -1,0 +1,28 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: ${spring.cloud.client.ip-address}
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+
+spring:
+  cloud:
+    gateway:
+      # gateway 运行从注册中心发现服务
+      discovery:
+        locator:
+          enabled: true
+          #服务serviceId不分区大小写
+          lowerCaseServiceId: true
+      routes:
+        #网关路由的转发 lb:// 表示是从注册中心发现serviceId
+        - id: arya-api
+          uri: lb://arya-api
+          predicates:
+            - Path=/**
+#          filters:
+#            - StripPrefix=1

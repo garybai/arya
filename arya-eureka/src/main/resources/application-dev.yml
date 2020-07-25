@@ -1,0 +1,12 @@
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false #（默认true；此处设为false，关闭自我保护机制，主动剔除故障的节点）
+    eviction-interval-timer-in-ms: 10000 #启用主动失效，并且每次主动失效检测间隔为3s
+    use-read-only-response-cache: false #禁用Eureka的ReadOnlyMap缓存

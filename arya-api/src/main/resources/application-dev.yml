@@ -1,0 +1,21 @@
+#feign:
+#  client:
+#    config:
+#      default:
+#        connect-timeout: 500
+#        read-timeout: 500
+#resilience4j:
+#  circuitbreaker:
+#    backends:
+#      demo: #断路器名称
+#        failure-rate-threshold: 50 #打开状态的阈值
+#        wait-duration-in-open-state: 5000 #open 持续时间
+#        ring-buffer-size-in-closed-state: 5 #表示断路器关闭状态下，环形缓冲区的大小
+#        ring-buffer-size-in-half-open-state: 3 # 表示断路器处于 HalfOpen 状态下，环形缓冲区的大小
+#      test: #断路器名称
+#        failure-rate-threshold: 50 #打开状态的阈值
+#        wait-duration-in-open-state: 5000 #open 持续时间
+#        ring-buffer-size-in-closed-state: 5 #环形缓冲区是在封闭状态下使用的大小
+#        ring-buffer-size-in-half-open-state: 3 # HalfOpen 状态下的大小
+#
+#
